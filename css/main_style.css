@@ -550,49 +550,45 @@ a {
 }
 .page-header .background img {
   display: block;
-  width: 1920px;
-  height: 800px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  margin-left: -960px;
-  margin-top: -400px;
+  width: 100%;
 }
-.page-header .author {
-  background: #ecf0f1;
+.page-header .background .author {
   text-align: center;
-  padding: 0 20px 30px 20px;
+  position: absolute;
+  z-index: 10;
+  width: 100%;
+  top: 22%;
 }
-.page-header .author .head {
+.page-header .background .author .head {
   display: inline-block;
   width: 130px;
   height: 130px;
   border-radius: 50%;
   padding: 3px;
-  background: #fff;
   box-shadow: 0 0 5px #95a5a6;
   position: relative;
-  top: -68px;
+  top: 0px;
 }
-.page-header .author .head img {
+.page-header .background .author .head img {
   width: 100%;
   height: 100%;
   display: block;
   border-radius: 50%;
-}
-.page-header .author .name, .page-header .author .signature {
-  position: relative;
   margin: 0;
+  top: 0;
+  left: 0;
 }
-.page-header .author .name {
+.page-header .background .author .name, .page-header .background .author .signature {
+  margin: 0;
+  line-height: 2.15;
+}
+.page-header .background .author .name {
   font-size: 1.3rem;
   color: #2c3e50;
-  top: -50px;
 }
-.page-header .author .signature {
+.page-header .background .author .signature {
   font-size: .95rem;
   color: #7f8c8d;
-  top: -35px;
 }
 
 @media screen and (max-width: 1440px) {
@@ -605,10 +601,8 @@ a {
     height: 350px;
   }
   .page-header .background img {
-    width: 1200px;
-    height: 500px;
-    margin-left: -600px;
-    margin-top: -250px;
+    width: 100%;
+    height: 350px;
   }
 }
 .post-header {
@@ -693,8 +687,8 @@ a {
   }
 }
 .page-footer .top {
-  background: #2c3e50;
-  padding: 10px 150px;
+  background: #34495e;
+  padding: 20px 15px;
 }
 .page-footer .top .social {
   padding-left: 0;
@@ -715,7 +709,7 @@ a {
 }
 .page-footer .bottom {
   background: #34495e;
-  padding: 30px 15px;
+  padding: 20px 15px;
 }
 .page-footer .bottom .copyright {
   font-size: .8rem;
@@ -736,7 +730,6 @@ a {
 }
 
 .post-list {
-  max-width: 600px;
   margin: 72px auto 0 auto;
   padding: 0 36px;
   list-style: none;
@@ -825,7 +818,6 @@ a {
 }
 
 .article-content, .article-meta {
-  max-width: 600px;
   padding: 0 36px;
   line-height: 2;
 }
@@ -938,7 +930,6 @@ a {
 }
 
 .article-comment {
-  max-width: 600px;
   padding: 0 36px;
   margin: 0 auto 72px auto;
 }
