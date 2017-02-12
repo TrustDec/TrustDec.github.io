@@ -20,7 +20,7 @@
 <p><span style="color:green;font-weight:bold">onAnimationDidEnd：</span>当动画完成的时候调用的方法 <span style="color:red">(iOS)</span><br><span style="color:green;font-weight:bold">onError:</span>当动画发生错误的时候调用的方法 <span style="color:red">(iOS)</span></p>
 </blockquote>
 <p>create:创建configureNext所需要的config参数</p>
-<p>#####RN提供的属性：<br>Types:动画类型,主要有:</p>
+<p>RN提供的属性：<br>Types:动画类型,主要有:</p>
 <blockquote>
 <ul>
 <li>spring:弹跳</li>
@@ -43,7 +43,7 @@
 <p>easeInEaseOut:默认配置项，在LayoutAnimation.Presets中</p>
 <p>linear:默认配置项，在LayoutAnimation.Presets中</p>
 <p>spring:默认配置项，在LayoutAnimation.Presets中</p>
-<p><span style="color:#188eee;font-weight:bold">注：安卓平台使用 LayoutAnimation 动画必须加入下面这句，iOS设备默认打开。具体代码如下:</span><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (Platform.OS === <span class="string">'android'</span>) &#123;</div><div class="line">  UIManager.setLayoutAnimationEnabledExperimental(<span class="literal">true</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><span style="color:188eee;font-weight:bold">注：安卓平台使用 LayoutAnimation 动画必须加入下面这句，iOS设备默认打开。具体代码如下:</span><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (Platform.OS === <span class="string">'android'</span>) &#123;</div><div class="line">  UIManager.setLayoutAnimationEnabledExperimental(<span class="literal">true</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
 <p>当布局更新时,使用LayoutAnimation进行设置一下动画配置:</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">componentWillUpdate() &#123;   </div><div class="line">  <span class="comment">// LayoutAnimation.easeInEaseOut();</span></div><div class="line">  <span class="comment">//或者可以使用如下的自定义的动画效果</span></div><div class="line">  LayoutAnimation.configureNext(CustomLayoutAnimation);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
 <p>自定义动画：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CustomLayoutAnimation = &#123;</div><div class="line">    <span class="attr">duration</span>: <span class="number">800</span>,</div><div class="line">    <span class="attr">create</span>: &#123;</div><div class="line">      <span class="attr">type</span>: LayoutAnimation.Types.spring,</div><div class="line">      <span class="attr">property</span>: LayoutAnimation.Properties.scaleXY,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">update</span>: &#123;</div><div class="line">      <span class="attr">type</span>: LayoutAnimation.Types.spring,</div><div class="line">      <span class="attr">property</span>: LayoutAnimation.Properties.scaleXY,</div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">  &#125;;</div></pre></td></tr></table></figure></p>
@@ -55,7 +55,7 @@
 <blockquote>
 <p>AM 7：00 ~ AM 8：30<br>PM 9：30 ~ PM 11：00</p>
 </blockquote>
-<p><span style="color:#B2B2B2">枕头里藏满了发霉的梦，梦里住满了得不到的人</span></p>
+<p><span style="color:B2B2B2">枕头里藏满了发霉的梦，梦里住满了得不到的人</span></p>
 </div><div class="article-meta" style="max-width:900px;"></div><div class="article-comment" style="max-width:900px;"><div class="ds-thread" id="ds-thread" data-thread-key="ciz2ds6gh0002kogbrrp7zu9b" data-title="LayoutAnimation" data-url="http://yoursite.com/2016/12/04/LayoutAnimation/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
 var duoshuoQuery = {short_name: siteName};
 (function() {
