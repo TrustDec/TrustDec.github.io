@@ -1,0 +1,30 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="/default_images/post_background.jpg"><div class="post-title"><h1 class="title">随笔</h1><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>3 Minutes</li><li><i class="icon icon-calendar"></i>December 4, 2016</li></ul></div></div><div class="article-content" style="max-width:900px;"><p>####ViewPagerAndroid</p>
+<p>此章节的Demo大概是我最用心的一篇,以React Native内部版本：0.37源代码为准,如果你认真看完,会发现没有想象中那么复杂,反而简单的让你不知所云~</p>
+<blockquote>
+<p>允许在子视图之间左右翻页的容器.<br>子容器为单独的页且会被拉伸填满.<br><span style="color:red">子视图必须是纯View，不能自定义容器.</span></p>
+</blockquote>
+<font style="color:green;">本章节代码已上传Github</font><br>&gt;URL:<a href="https://github.com/TrustTheBoy/React-Native-BBS" target="_blank" rel="external">https://github.com/TrustTheBoy/React-Native-BBS</a><br>&gt;找不到的请聊天区留言.<br>&gt;<span style="color:red">效果图在文章最后.</span><br>&gt;时间太紧,页面没怎样美化但是该涉及道德属性一个都不拉.<br><br>#####官网提供的属性：<br><br><span style="color:#188eee;font-size:15;font-weight:bold">initialPage</span><br>&gt;加载到页面显示第几个View,下标始为0.<br>&gt;可以用setPage函数来翻页.<br>&gt;用onPageSelected来监听页的变化.<br><br>    例：initialPage={1}<br><br><span style="color:#188eee;font-size:15;font-weight:bold">keyboardDismissMode</span><br>&gt;拖拽视图会让键盘消失。<br>&gt;默认none:不会消失;<br>&gt;on-drag:拖拽开始时让键盘消失<br><br>    例：keyboardDismissMode=’on-drag’<br><br><span style="color:#188eee;font-size:15;font-weight:bold">onPageScroll</span><br>&gt;当在页间切换时执行。<br>&gt;回调参数event.nativeEvent对象包含数据:<br><br>- event.nativeEvent.position:从左数起第一个当前可见的页面的下标。<br>- event.nativeEvent.offset:当前页面切换的状态<br>- 值x表示现在”position”所表示的页有(1 - x)的部分可见，而下一页有x的部分可见。<br><br>&gt;<br><br>    例：onPageScroll={(e)=&gt;console.log(e)}<br><br><span style="color:#188eee;font-size:15;font-weight:bold">onPageScrollStateChanged</span><br>&gt;页面滑动状态变化时调用此回调函数,状态有:<br><br><br>- idle:空闲,当前没有交互。<br>- dragging:拖动中,当前页面正在被拖动<br>- settling:处理中,当前页面发生过交互,正在结束开头或收尾的动画。<br><br>&gt;<br><br>    例：onPageScrollStateChanged={(state)=&gt;console.log(state)}<br><br><span style="color:#188eee;font-size:15;font-weight:bold">onPageSelected</span><br>&gt;页面切换完成后调用.<br><br>  - event.nativeEvent.position 当前被选中的页面下标<br><br>&gt;<br><br>    例：onPageSelected={(e)=&gt;console.log(e.nativeEvent.position)}<br><br><span style="color:#188eee;font-size:15;font-weight:bold">scrollEnabled</span><br>&gt;设为false时可禁止滚动.默认值为true.<br><br>    例：scrollEnabled={true}<br><span style="color:#188eee;font-size:15;font-weight:bold">pageMargin</span><br>&gt;每个Page中间相隔距离.<br><br>    例：pageMargin={50}<br><br><span style="color:#188eee;font-size:15;font-weight:bold">setPage</span><br>&gt;滑动有动画效果.<br><br>    例：this.viewPager.setPage(defaultPage);<br><span style="color:#188eee;font-size:15;font-weight:bold">setPageWithoutAnimation</span><br>&gt;滑动没有动画效果.<br><br>    例：this.viewPager.setPageWithoutAnimation(defaultPage);<br><br>####关键代码(全部代码已上传到Github)<br><br><br>#####欢迎你的加入！<br><br><font style="color:green;font-weight:bold">公众号：Domeday</font>
+
+<p>推送时间为：</p>
+<blockquote>
+<p>AM 7：00 ~ AM 8：30<br>PM 9：30 ~ PM 11：00</p>
+</blockquote>
+<p><span style="color:#B2B2B2">在互联网这个行业，技术的更新迭代速度很快，唯有不断学习和尝试，我们才能立于不败之地，人都是做自己原本不能胜任的事情中，才能快速成长。所以，不要让任何事情成为你不去学习的理由！，你学过的每一样东西，都会在你一生的某个时候派上用场的。<br></span></p>
+</div><div class="article-meta" style="max-width:900px;"></div><div class="article-comment" style="max-width:900px;"><div class="ds-thread" id="ds-thread" data-thread-key="ciz2ds6gh0004kogbbeh3dfwq" data-title="" data-url="http://yoursite.com/2016/12/04/ViewPagerAndroid/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+  <!-- trusttheboy.github.io/ Baidu tongji analytics -->
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?fe3f5969cfe3bf9255462b6403670fb4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2016/12/04/第一章 环境搭建/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2016/12/04/LayoutAnimation/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>

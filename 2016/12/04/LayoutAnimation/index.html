@@ -1,0 +1,77 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="/default_images/post_background.jpg"><div class="post-title"><h1 class="title">随笔</h1><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>5 Minutes</li><li><i class="icon icon-calendar"></i>December 4, 2016</li></ul></div></div><div class="article-content" style="max-width:900px;"><p>####LayoutAnimation</p>
+<blockquote>
+<p><span class="fontSmall" style="color:green">修改于2016年10月29日<br>RN版本:0.36</span>  </p>
+</blockquote>
+<p>Demo将上传至Github</p>
+<blockquote>
+<p><span class="fontSmall">布局发生变化时,自动将视图运动到它们的新位置.<br>调用LayoutAnimation.configureNext.<br>然后调用setState.</span></p>
+</blockquote>
+<p>一些简单的界面切换、更新的时候可以用RN提供的LayoutAnimation来实现。</p>
+<p>打开LayoutAnimation的文档,可以看到提供的属性并不多，用起来也并不难。</p>
+<p>#####RN提供的方法：</p>
+<p>######configureNext:安排一个动画在下一个布局中发生,参数如下：</p>
+<blockquote>
+<p><span style="color:green;font-weight:bold">config：</span>指定动画属性参数有:</p>
+<ul>
+<li>duration:动画持续的时间</li>
+<li>create:创建一个新视图所使用的动画</li>
+<li>update:当视图被更新的时候所使用的动画</li>
+<li>delete:删除一个视图使用的动画</li>
+</ul>
+<p><span style="color:green;font-weight:bold">onAnimationDidEnd：</span>当动画完成的时候调用的方法 <span style="color:red">(iOS)</span><br><span style="color:green;font-weight:bold">onError:</span>当动画发生错误的时候调用的方法 <span style="color:red">(iOS)</span></p>
+</blockquote>
+<p>######create:创建configureNext所需要的config参数</p>
+<p>#####RN提供的属性：<br>Types:动画类型,主要有:</p>
+<blockquote>
+<ul>
+<li>spring:弹跳</li>
+<li>linear:线性</li>
+<li>easeInEaseOut:缓入缓出</li>
+<li>easeIn:缓入</li>
+<li>easeOut:缓出</li>
+<li>keyboard:键入</li>
+</ul>
+</blockquote>
+<p>Properties:类型定义在LayoutAnimation.Properties中</p>
+<blockquote>
+<ul>
+<li>opacity：透明度</li>
+<li>scaleXY：缩放</li>
+</ul>
+</blockquote>
+<p>configChecker:配置检查器</p>
+<p>Presets:对象类型(动画效果默认配置项)</p>
+<p>easeInEaseOut:默认配置项，在LayoutAnimation.Presets中</p>
+<p>linear:默认配置项，在LayoutAnimation.Presets中</p>
+<p>spring:默认配置项，在LayoutAnimation.Presets中</p>
+<p><span style="color:#188eee;font-weight:bold">注：安卓平台使用 LayoutAnimation 动画必须加入下面这句，iOS设备默认打开。具体代码如下:</span><br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span> (Platform.OS === <span class="string">'android'</span>) &#123;</div><div class="line">  UIManager.setLayoutAnimationEnabledExperimental(<span class="literal">true</span>)</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>当布局更新时,使用LayoutAnimation进行设置一下动画配置:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">componentWillUpdate() &#123;   </div><div class="line">  <span class="comment">// LayoutAnimation.easeInEaseOut();</span></div><div class="line">  <span class="comment">//或者可以使用如下的自定义的动画效果</span></div><div class="line">  LayoutAnimation.configureNext(CustomLayoutAnimation);</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>自定义动画：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">var</span> CustomLayoutAnimation = &#123;</div><div class="line">    <span class="attr">duration</span>: <span class="number">800</span>,</div><div class="line">    <span class="attr">create</span>: &#123;</div><div class="line">      <span class="attr">type</span>: LayoutAnimation.Types.spring,</div><div class="line">      <span class="attr">property</span>: LayoutAnimation.Properties.scaleXY,</div><div class="line">    &#125;,</div><div class="line">    <span class="attr">update</span>: &#123;</div><div class="line">      <span class="attr">type</span>: LayoutAnimation.Types.spring,</div><div class="line">      <span class="attr">property</span>: LayoutAnimation.Properties.scaleXY,</div><div class="line">    &#125;,</div><div class="line">    </div><div class="line">  &#125;;</div></pre></td></tr></table></figure></p>
+<p>以上是部分,需要全部代码请去：<br>    <a href="https://github.com/TrustTheBoy/React-Native-BBS" target="_blank" rel="external">https://github.com/TrustTheBoy/React-Native-BBS</a></p>
+<p>建议查看源代码进行学习：<br>    <a href="https://github.com/facebook/react-native/blob/d4e7c8a0550891208284bd1d900bd9721d899f8f/Libraries/LayoutAnimation/LayoutAnimation.js" target="_blank" rel="external">https://github.com/facebook/react-native/blob/d4e7c8a0550891208284bd1d900bd9721d899f8f/Libraries/LayoutAnimation/LayoutAnimation.js</a></p>
+<font style="color:green;font-weight:bold">公众号：Domeday</font>
+
+<p>推送时间为：</p>
+<blockquote>
+<p>AM 7：00 ~ AM 8：30<br>PM 9：30 ~ PM 11：00</p>
+</blockquote>
+<p><span style="color:#B2B2B2">枕头里藏满了发霉的梦，梦里住满了得不到的人</span></p>
+</div><div class="article-meta" style="max-width:900px;"></div><div class="article-comment" style="max-width:900px;"><div class="ds-thread" id="ds-thread" data-thread-key="ciz2ds6gh0002kogbrrp7zu9b" data-title="" data-url="http://yoursite.com/2016/12/04/LayoutAnimation/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+  <!-- trusttheboy.github.io/ Baidu tongji analytics -->
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?fe3f5969cfe3bf9255462b6403670fb4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2016/12/04/ViewPagerAndroid/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2016/12/04/DrawerLayoutAndroid/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>

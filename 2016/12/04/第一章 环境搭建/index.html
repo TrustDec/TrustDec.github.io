@@ -1,0 +1,197 @@
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="/default_images/post_background.jpg"><div class="post-title"><h1 class="title">随笔</h1><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>11 Minutes</li><li><i class="icon icon-calendar"></i>December 4, 2016</li></ul></div></div><div class="article-content" style="max-width:900px;"><h5 id="windows搭建React-Native环境"><a href="#windows搭建React-Native环境" class="headerlink" title="windows搭建React Native环境"></a>windows搭建React Native环境</h5><p>######前情提要：</p>
+<blockquote>
+<p>本章图片30张，请注意你的流量<br>之前我在简书写过RN环境搭建的教程<br>简书：TrustTheBoy<br>教程地址：<a href="http://www.jianshu.com/p/8f9662dbaa99" target="_blank" rel="external">http://www.jianshu.com/p/8f9662dbaa99</a></p>
+</blockquote>
+<p>####<font style="color:#188eee">本次搭建环境：</font></p>
+<blockquote>
+<p>操作系统：windows 10 64位<br>版本号：1607<br>OS 内部版本 14393.321<br>React Native版本：0.35</p>
+</blockquote>
+<font style="color:#188eee">以下工具可以问我要<br>以下工具可以问我要<br>以下工具可以问我要</font>
+
+<p>#####<font style="color:red">需要准备：(以下工具可以问我要)</font></p>
+<blockquote>
+<p>1.<span style="color:green;font-weight:bold">JDK1.8:</span>版本不强求,最好都用最新的吧,1.7也可以<br>2.<span style="color:green;font-weight:bold">SDK：</span>用于测试安卓应用的万能模拟器<br>3.<span style="color:green;font-weight:bold">Node:</span>node.js是轻量级的Web服务器，React Native跑起来需要安装node<br>4.<span style="color:green;font-weight:bold">Git:</span>安装React-native需要用到git，如果没有配置git，需要先下载对应的客户端<br>5.<span style="color:green;font-weight:bold">VirtualBox:</span>免费虚拟机软件，具有丰富的特色，而且性能也很优异！简单易用<br>6.<span style="color:green;font-weight:bold">Genymotion：</span>最棒模拟体验</p>
+</blockquote>
+<p>#####<font style="color:red">科学上网工具(重要),过程中保持开启</font></p>
+<blockquote>
+<p><span style="color:#000;font-weight:bold;font-size:13">作为开发者,如果不会科学上网，那真的说不过去，不会翻墙，甚至你连下载开发工具都很难，所以无论如何你都该拥有科学上网的能力</span></p>
+</blockquote>
+<p>####进入正题</p>
+<p>#####👉第一步：安装JDK(本人安装的是最新版本JDK1.8),并配置变量环境</p>
+<blockquote>
+<p>JDK的位置 </p>
+</blockquote>
+<pre><code>例如：（JAVA_HOME=&gt; D:\java)
+</code></pre><blockquote>
+<p>设置环境变量PATH：</p>
+</blockquote>
+<pre><code>例如：（PATH=&gt; %JAVA_HOME%\lib\dt.jar;%JAVA_HOME%\lib\tools.jar;）
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/2658444-ce951be8c2d48c97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>配置完成按 <code>win+r</code> 键，打开 <code>运行</code> 输入 <code>cmd</code> ,键入命令 <code>javac</code> 或 <code>java</code> 检测是否安装成功</p>
+<p>图11111111111111111111111</p>
+<p>#####👉第二步：安装SDK</p>
+<p>######(1)首先设置SDK环境变量,</p>
+<blockquote>
+<p>Android SDK Manager的位置 </p>
+</blockquote>
+<pre><code>例如：（ANDROID_HOME=&gt; D:\android-sdk-windows）
+</code></pre><blockquote>
+<p>设置环境变量PATH：</p>
+</blockquote>
+<pre><code>例如：（PATH=&gt; %ANDROID_HOME%\tools;%ANDROID_HOME%\platform-tools）
+</code></pre><blockquote>
+<p>配置完成按 <code>win+r</code> 键<br>打开 <code>运行</code> 输入 <code>cmd</code><br>键入命令 <code>android</code> 检测是否安装成功</p>
+</blockquote>
+<p>######(2)然后双击打开SDK Manager.exe<br><img src="http://upload-images.jianshu.io/upload_images/2658444-59c374be63bb25e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>######(3)使用国内镜像地址下载</p>
+<blockquote>
+<p>如果你没有使用科学上网工具<br>那么请访问<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">http://www.androiddevtools.cn/</a><br>查看切换镜像地址以及设置方法</p>
+</blockquote>
+<p>######(4)设置完成之后点击菜单Packages–&gt;Reload<br><img src="http://upload-images.jianshu.io/upload_images/2658444-8afb3dd72ac8bb15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>######(5)然后选择图中所勾选文件,点击右下方Install packages<br><img src="http://upload-images.jianshu.io/upload_images/2658444-fce71ca1509c1389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>######(6)接着点击Accept License,然后点击Install进行下载</p>
+<blockquote>
+<p><span style="color:#188eee">由于文件需要很久才能下载下来,所以可以进行第三步了,<br>但是不要关闭Android SDK窗口</span></p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-8666677d307da888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#####👉第三步:安装Node,访问<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-56c4059c1441f2e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>node.js是轻量级的Web服务器，React Native跑起来需要安装node</p>
+</blockquote>
+<p>安装完成之后：</p>
+<blockquote>
+<p>按 <code>win+r</code> 键<br>打开 <code>运行</code> 输入 <code>cmd</code><br>键入node -v的命令来测试NodeJS是否安装成功</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-e89fc92b6f2df016.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#####👉第四步:安装Git</p>
+<blockquote>
+<p>安装React-native需要用到git，<br>如果没有配置git<br>需要先下载对应的客户端,<br>访问：</p>
+</blockquote>
+<pre><code>https://git-for-windows.github.io
+</code></pre><font style="color:red">安装时这里记得选择第二个</font>
+
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-1873ce98e35bb0c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#####👉第五步:安装react-native命令行工具</p>
+<blockquote>
+<p>先创建文件名,(名字可以自定义)<br>按住Shift键,鼠标右键点击在此打开命令窗口<br>输入</p>
+</blockquote>
+<pre><code>git clone https://github.com/facebook/react-native.git
+</code></pre><p>(过程比较久,看网速啦)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-074ccb5773335019.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>克隆成功</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-013838b9ec63724b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>然后进入目录下的react-native目录下的react-native-cli目录，输入:</p>
+</blockquote>
+<pre><code>npm install -g  
+</code></pre><blockquote>
+<p>回车</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-d71824244f8be1dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>完成</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-5c57ce02c6db0346.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<font style="color:#188eee;font-weight:bold">react-native命令安装完成</font>
+
+
+<p>#####👉第六步:创建React Native项目</p>
+<blockquote>
+<p>📍到这里的时候请查看SDK下载完没，<br>📍下载完成请检查是否勾选的都有下载<br>📍如果没有问题，请继续</p>
+</blockquote>
+<p>(1).进入你要要存放项目的盘符,执行react-native init (项目名)—&gt;这里时间很长，耐心等待</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-aaac74c3f56e3b62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>OK</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-747e32bcd16a2fdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#####👉第七步：开启React Native服务,键入命令：（需要等待一段时间）</p>
+<pre><code>react-native start
+</code></pre><p><img src="http://upload-images.jianshu.io/upload_images/2658444-8e443b535a72190f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>用浏览器访问：</p>
+</blockquote>
+<pre><code>http://localhost:8081/index.android.bundle?platform=android
+</code></pre><blockquote>
+<p>看看是否可以看到打包后的脚本<br>看到很长的js代码就对了<br>第一次访问通常需要十几秒<br>并且在packager的命令行可以看到进度。</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-5c702f52d5503236.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>####以下不是必须，如果有真机直接用真机也行</p>
+<p>#####👉第八步：安装VirtualBox</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-fb49d286a3125af4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>#####👉第九步：Genymotion</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-422f473d94c65a77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>1.配置Genymotion</p>
+<blockquote>
+<p>打开Genymotion<br>点击菜单栏Setting—&gt;ADB,<br>选择use custom Android SDK tools<br>点击Browse,选择前面SDK安装目录</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-70adceebb941cc48.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>在Genymotion下载需要翻墙，可以百度ova格式镜像</p>
+<blockquote>
+<p>ova镜像我可以问我要~，以下是自己下载步骤<br>#</p>
+</blockquote>
+<p>在软件中下载的请进入Genymotion官网,注册一个账号,</p>
+<pre><code>https://www.genymotion.com/account/create/
+</code></pre><p>点击Create an Account,跳转代表创建成功,如果没有动作,请上拉至顶部,看看是否有黄色警示框,<br>(由于我的笔记本屏幕小,当初就在这里浪费了点时间,结果人家的提示框在上面😭😭😭)</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-ae069c6f545c5144.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>注册成功后,回到Genymotion进行登录,点击Setting–&gt;Account,点击Sign in,登录你的账号</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-bbbc1210a1f67e4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>下载Android镜像</p>
+</blockquote>
+<p>点击菜单栏ADD,选择系统型号,下一步</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-bbbc1210a1f67e4b.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-82777c14aa8a0ca6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>完成之后可以根据个人需求进行设置：<br><img src="http://upload-images.jianshu.io/upload_images/2658444-1264693891dee2f3.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>设置完后双击,开启虚拟机/或者点Start</p>
+</blockquote>
+<p>#####👉第十步：运行package,在命令行中进入项目目录，输入：</p>
+<pre><code>react-native start
+</code></pre><p>然后相应的目录新开启命令窗口输入：</p>
+<pre><code>react-native run-android 
+</code></pre><p>等待一段时间(科学上网工具请准备好)：</p>
+<blockquote>
+<p>说明：键入react-native run-android后会看见”.”增加，<br>这里其实是在下载：</p>
+</blockquote>
+<pre><code>gradle-2.4-all.zip    (就是这个文件)
+</code></pre><p>此文件可以问我要，可以不解压||解压</p>
+<blockquote>
+<p>放到：</p>
+</blockquote>
+<pre><code>C:\Users\用户名\.gradle\wrapper\dists\gradle-2.4-all\6r4uqcc6ovnq6ac6s0txzcpc0\
+</code></pre><blockquote>
+<p>接着重新执行命令即可</p>
+</blockquote>
+<p>####以下是自己翻墙下载时的截图,时间紧迫的可以找我要文件，跳过这里</p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-3addda2b7e7d8463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<blockquote>
+<p>第一次会很慢,因为需要下载些文件</p>
+</blockquote>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-25a86341c5855e34.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>如果执行过程中报错：</p>
+<pre><code>error:failed to find Build Tools revision 23.0.1
+</code></pre><p>请检查SDK下载文件是否都已下载完成</p>
+<p>如果报错：<br><img src="http://upload-images.jianshu.io/upload_images/2658444-cfa3d73226630729.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p><img src="http://upload-images.jianshu.io/upload_images/2658444-cdd99eaba4b228f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>再次执行命令react-native run-android<br><img src="http://upload-images.jianshu.io/upload_images/2658444-01db186b4f3e47dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>切出你的安卓模拟器,看见Welcome….代表你成功了<br><img src="http://upload-images.jianshu.io/upload_images/2658444-b74e9d1ad6dbfa73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+</div><div class="article-meta" style="max-width:900px;"></div><div class="article-comment" style="max-width:900px;"><div class="ds-thread" id="ds-thread" data-thread-key="ciz2ds6gh0003kogbnx74y3k3" data-title="" data-url="http://yoursite.com/2016/12/04/第一章 环境搭建/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+var duoshuoQuery = {short_name: siteName};
+(function() {
+  var ds = document.createElement('script');
+  ds.type = 'text/javascript';ds.async = true;
+  ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
+  ds.charset = 'UTF-8';
+  (document.getElementsByTagName('head')[0] 
+  || document.getElementsByTagName('body')[0]).appendChild(ds);
+  <!-- trusttheboy.github.io/ Baidu tongji analytics -->
+  var _hmt = _hmt || [];
+  (function() {
+    var hm = document.createElement("script");
+    hm.src = "https://hm.baidu.com/hm.js?fe3f5969cfe3bf9255462b6403670fb4";
+    var s = document.getElementsByTagName("script")[0]; 
+    s.parentNode.insertBefore(hm, s);
+  })();
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/02/12/Welcome to Trust blog/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2016/12/04/ViewPagerAndroid/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>
