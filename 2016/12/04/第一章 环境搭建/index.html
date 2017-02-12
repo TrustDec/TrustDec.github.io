@@ -1,23 +1,27 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="/default_images/post_background.jpg"><div class="post-title"><h1 class="title">随笔</h1><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>11 Minutes</li><li><i class="icon icon-calendar"></i>December 4, 2016</li></ul></div></div><div class="article-content" style="max-width:900px;"><h5 id="windows搭建React-Native环境"><a href="#windows搭建React-Native环境" class="headerlink" title="windows搭建React Native环境"></a>windows搭建React Native环境</h5><p>######前情提要：</p>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>windows搭建React Native环境 - Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="/default_images/post_background.jpg"><div class="post-title"><h1 class="title">windows搭建React Native环境</h1><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>11 Minutes</li><li><i class="icon icon-calendar"></i>December 4, 2016</li></ul></div></div><div class="article-content" style="max-width:900px;"><p>前情提要：</p>
 <blockquote>
 <p>本章图片30张，请注意你的流量<br>之前我在简书写过RN环境搭建的教程<br>简书：TrustTheBoy<br>教程地址：<a href="http://www.jianshu.com/p/8f9662dbaa99" target="_blank" rel="external">http://www.jianshu.com/p/8f9662dbaa99</a></p>
 </blockquote>
-<p>####<font style="color:#188eee">本次搭建环境：</font></p>
+<a id="more"></a>
+<font style="color:#188eee">本次搭建环境：</font>
+
 <blockquote>
 <p>操作系统：windows 10 64位<br>版本号：1607<br>OS 内部版本 14393.321<br>React Native版本：0.35</p>
 </blockquote>
 <font style="color:#188eee">以下工具可以问我要<br>以下工具可以问我要<br>以下工具可以问我要</font>
 
-<p>#####<font style="color:red">需要准备：(以下工具可以问我要)</font></p>
+<font style="color:red">需要准备：(以下工具可以问我要)</font>
+
 <blockquote>
 <p>1.<span style="color:green;font-weight:bold">JDK1.8:</span>版本不强求,最好都用最新的吧,1.7也可以<br>2.<span style="color:green;font-weight:bold">SDK：</span>用于测试安卓应用的万能模拟器<br>3.<span style="color:green;font-weight:bold">Node:</span>node.js是轻量级的Web服务器，React Native跑起来需要安装node<br>4.<span style="color:green;font-weight:bold">Git:</span>安装React-native需要用到git，如果没有配置git，需要先下载对应的客户端<br>5.<span style="color:green;font-weight:bold">VirtualBox:</span>免费虚拟机软件，具有丰富的特色，而且性能也很优异！简单易用<br>6.<span style="color:green;font-weight:bold">Genymotion：</span>最棒模拟体验</p>
 </blockquote>
-<p>#####<font style="color:red">科学上网工具(重要),过程中保持开启</font></p>
+<font style="color:red">科学上网工具(重要),过程中保持开启</font>
+
 <blockquote>
 <p><span style="color:#000;font-weight:bold;font-size:13">作为开发者,如果不会科学上网，那真的说不过去，不会翻墙，甚至你连下载开发工具都很难，所以无论如何你都该拥有科学上网的能力</span></p>
 </blockquote>
-<p>####进入正题</p>
-<p>#####👉第一步：安装JDK(本人安装的是最新版本JDK1.8),并配置变量环境</p>
+<p>进入正题</p>
+<p>👉第一步：安装JDK(本人安装的是最新版本JDK1.8),并配置变量环境</p>
 <blockquote>
 <p>JDK的位置 </p>
 </blockquote>
@@ -29,8 +33,8 @@
 </code></pre><p><img src="http://upload-images.jianshu.io/upload_images/2658444-ce951be8c2d48c97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>配置完成按 <code>win+r</code> 键，打开 <code>运行</code> 输入 <code>cmd</code> ,键入命令 <code>javac</code> 或 <code>java</code> 检测是否安装成功</p>
 <p>图11111111111111111111111</p>
-<p>#####👉第二步：安装SDK</p>
-<p>######(1)首先设置SDK环境变量,</p>
+<p>👉第二步：安装SDK</p>
+<p>(1)首先设置SDK环境变量,</p>
 <blockquote>
 <p>Android SDK Manager的位置 </p>
 </blockquote>
@@ -42,19 +46,19 @@
 </code></pre><blockquote>
 <p>配置完成按 <code>win+r</code> 键<br>打开 <code>运行</code> 输入 <code>cmd</code><br>键入命令 <code>android</code> 检测是否安装成功</p>
 </blockquote>
-<p>######(2)然后双击打开SDK Manager.exe<br><img src="http://upload-images.jianshu.io/upload_images/2658444-59c374be63bb25e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>######(3)使用国内镜像地址下载</p>
+<p>(2)然后双击打开SDK Manager.exe<br><img src="http://upload-images.jianshu.io/upload_images/2658444-59c374be63bb25e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>(3)使用国内镜像地址下载</p>
 <blockquote>
 <p>如果你没有使用科学上网工具<br>那么请访问<a href="http://www.androiddevtools.cn/" target="_blank" rel="external">http://www.androiddevtools.cn/</a><br>查看切换镜像地址以及设置方法</p>
 </blockquote>
-<p>######(4)设置完成之后点击菜单Packages–&gt;Reload<br><img src="http://upload-images.jianshu.io/upload_images/2658444-8afb3dd72ac8bb15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>######(5)然后选择图中所勾选文件,点击右下方Install packages<br><img src="http://upload-images.jianshu.io/upload_images/2658444-fce71ca1509c1389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>######(6)接着点击Accept License,然后点击Install进行下载</p>
+<p>(4)设置完成之后点击菜单Packages–&gt;Reload<br><img src="http://upload-images.jianshu.io/upload_images/2658444-8afb3dd72ac8bb15.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>(5)然后选择图中所勾选文件,点击右下方Install packages<br><img src="http://upload-images.jianshu.io/upload_images/2658444-fce71ca1509c1389.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
+<p>(6)接着点击Accept License,然后点击Install进行下载</p>
 <blockquote>
 <p><span style="color:#188eee">由于文件需要很久才能下载下来,所以可以进行第三步了,<br>但是不要关闭Android SDK窗口</span></p>
 </blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-8666677d307da888.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>#####👉第三步:安装Node,访问<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
+<p>👉第三步:安装Node,访问<a href="https://nodejs.org/en/" target="_blank" rel="external">https://nodejs.org/en/</a></p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-56c4059c1441f2e6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <blockquote>
 <p>node.js是轻量级的Web服务器，React Native跑起来需要安装node</p>
@@ -64,7 +68,7 @@
 <p>按 <code>win+r</code> 键<br>打开 <code>运行</code> 输入 <code>cmd</code><br>键入node -v的命令来测试NodeJS是否安装成功</p>
 </blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-e89fc92b6f2df016.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>#####👉第四步:安装Git</p>
+<p>👉第四步:安装Git</p>
 <blockquote>
 <p>安装React-native需要用到git，<br>如果没有配置git<br>需要先下载对应的客户端,<br>访问：</p>
 </blockquote>
@@ -72,7 +76,7 @@
 </code></pre><font style="color:red">安装时这里记得选择第二个</font>
 
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-1873ce98e35bb0c0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>#####👉第五步:安装react-native命令行工具</p>
+<p>👉第五步:安装react-native命令行工具</p>
 <blockquote>
 <p>先创建文件名,(名字可以自定义)<br>按住Shift键,鼠标右键点击在此打开命令窗口<br>输入</p>
 </blockquote>
@@ -98,7 +102,7 @@
 <font style="color:#188eee;font-weight:bold">react-native命令安装完成</font>
 
 
-<p>#####👉第六步:创建React Native项目</p>
+<p>👉第六步:创建React Native项目</p>
 <blockquote>
 <p>📍到这里的时候请查看SDK下载完没，<br>📍下载完成请检查是否勾选的都有下载<br>📍如果没有问题，请继续</p>
 </blockquote>
@@ -106,7 +110,7 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-aaac74c3f56e3b62.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>OK</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-747e32bcd16a2fdc.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>#####👉第七步：开启React Native服务,键入命令：（需要等待一段时间）</p>
+<p>👉第七步：开启React Native服务,键入命令：（需要等待一段时间）</p>
 <pre><code>react-native start
 </code></pre><p><img src="http://upload-images.jianshu.io/upload_images/2658444-8e443b535a72190f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <blockquote>
@@ -117,10 +121,10 @@
 <p>看看是否可以看到打包后的脚本<br>看到很长的js代码就对了<br>第一次访问通常需要十几秒<br>并且在packager的命令行可以看到进度。</p>
 </blockquote>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-5c702f52d5503236.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>####以下不是必须，如果有真机直接用真机也行</p>
-<p>#####👉第八步：安装VirtualBox</p>
+<p>以下不是必须，如果有真机直接用真机也行</p>
+<p>👉第八步：安装VirtualBox</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-fb49d286a3125af4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-<p>#####👉第九步：Genymotion</p>
+<p>👉第九步：Genymotion</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-422f473d94c65a77.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>1.配置Genymotion</p>
 <blockquote>
@@ -147,7 +151,7 @@
 <blockquote>
 <p>设置完后双击,开启虚拟机/或者点Start</p>
 </blockquote>
-<p>#####👉第十步：运行package,在命令行中进入项目目录，输入：</p>
+<p>👉第十步：运行package,在命令行中进入项目目录，输入：</p>
 <pre><code>react-native start
 </code></pre><p>然后相应的目录新开启命令窗口输入：</p>
 <pre><code>react-native run-android 
@@ -164,7 +168,7 @@
 </code></pre><blockquote>
 <p>接着重新执行命令即可</p>
 </blockquote>
-<p>####以下是自己翻墙下载时的截图,时间紧迫的可以找我要文件，跳过这里</p>
+<p>以下是自己翻墙下载时的截图,时间紧迫的可以找我要文件，跳过这里</p>
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-3addda2b7e7d8463.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <blockquote>
 <p>第一次会很慢,因为需要下载些文件</p>
@@ -177,7 +181,7 @@
 <p><img src="http://upload-images.jianshu.io/upload_images/2658444-cdd99eaba4b228f0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>再次执行命令react-native run-android<br><img src="http://upload-images.jianshu.io/upload_images/2658444-01db186b4f3e47dd.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
 <p>切出你的安卓模拟器,看见Welcome….代表你成功了<br><img src="http://upload-images.jianshu.io/upload_images/2658444-b74e9d1ad6dbfa73.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt=""></p>
-</div><div class="article-meta" style="max-width:900px;"></div><div class="article-comment" style="max-width:900px;"><div class="ds-thread" id="ds-thread" data-thread-key="ciz2ds6gh0003kogbnx74y3k3" data-title="" data-url="http://yoursite.com/2016/12/04/第一章 环境搭建/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
+</div><div class="article-meta" style="max-width:900px;"></div><div class="article-comment" style="max-width:900px;"><div class="ds-thread" id="ds-thread" data-thread-key="ciz2ds6gh0003kogbnx74y3k3" data-title="windows搭建React Native环境" data-url="http://yoursite.com/2016/12/04/第一章 环境搭建/" site-name="ueibo"></div><script>var siteName = document.getElementById('ds-thread').getAttribute('site-name');
 var duoshuoQuery = {short_name: siteName};
 (function() {
   var ds = document.createElement('script');
@@ -194,4 +198,4 @@ var duoshuoQuery = {short_name: siteName};
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   })();
-})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/02/12/Welcome to Trust blog/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2016/12/04/ViewPagerAndroid/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/02/12/ReactJS 实践心得 key 属性的原理和用法/"><i class="icon icon-arror-left"></i></a></li><li><a href="/2016/12/04/ViewPagerAndroid/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>

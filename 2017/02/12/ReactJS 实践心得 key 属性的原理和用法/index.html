@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>ReactJS 实践心得 key 属性的原理和用法 - Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="/default_images/post_background.jpg"><div class="post-title"><h1 class="title">ReactJS 实践心得 key 属性的原理和用法</h1><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>13 Minutes</li><li><i class="icon icon-calendar"></i>February 12, 2017</li></ul></div></div><div class="article-content" style="max-width:900px;"><p>####ReactJS &amp;&amp; ReactNative ：</p>
+<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>ReactJS 实践心得 key 属性的原理和用法 - Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="post-header"><img class="background" src="/default_images/post_background.jpg"><div class="post-title"><h1 class="title">ReactJS 实践心得 key 属性的原理和用法</h1><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>13 Minutes</li><li><i class="icon icon-calendar"></i>February 12, 2017</li></ul></div></div><div class="article-content" style="max-width:900px;"><p>ReactJS &amp;&amp; ReactNative ：</p>
 <blockquote>
 <p>本章主要讲解key属性的原理和用法</p>
 </blockquote>
 <a id="more"></a>
-<p>#####首先你需要知道：</p>
+<p>首先你需要知道：</p>
 <p><span style="color:#188eee;font-weight:bold">React与ReactJS &amp;&amp; React Native</span></p>
 <blockquote>
 <p><strong>React</strong>是由<strong>ReactJS</strong>与<strong>React Native</strong>组成</p>
@@ -22,12 +22,11 @@
 <p>如果你有下面这样的代码：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> UserList = <span class="function"><span class="params">props</span> =&gt;</span> (</div><div class="line"> &lt;div&gt;</div><div class="line">  &lt;h3&gt;用户列表&lt;/h3&gt;</div><div class="line">  &#123;props.users.map(</div><div class="line">	u =&gt; &lt;div&gt;&#123;u.id&#125;:&#123;u.name&#125;&lt;/div&gt;)</div><div class="line">  &#125;  </div><div class="line">	// 没有提供 key</div><div class="line"> &lt;/div&gt;</div><div class="line">)</div></pre></td></tr></table></figure></p>
 <p>React 会在控制台打印出报警信息：<br><span style="color:red"><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">Warning: Each child in an array or iterator should have a unique &quot;key&quot; prop. Check the render method of `App`. See https://fb.me/react-warning-keys for more information.</div></pre></td></tr></table></figure></span></p>
 <p><br>你必须为数组中的元素提供唯一的 key 属性，就像下面这样：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">const</span> UserList = <span class="function"><span class="params">props</span> =&gt;</span> (</div><div class="line">	  &lt;div&gt;</div><div class="line">	    &lt;h3&gt;用户列表&lt;/h3&gt;</div><div class="line">	   &#123;props.users.map(u =&gt; &lt;div key=&#123;u.id&#125;&gt;&#123;u.id&#125;:&#123;u.name&#125;&lt;/div&gt;)&#125;  </div><div class="line">		// 提供了 key</div><div class="line">	  &lt;/div&gt;</div><div class="line">)</div></pre></td></tr></table></figure></p>
-<p>#####为什么呢？</p>
-<p>我们知道当组件的属性发生了变化，其 render 方法会被重新调用，组件会被重新渲染.</p>
-<p>#####比如: </p>
+<p>为什么呢？</p>
+<p>我们知道当组件的属性发生了变化，其 render 方法会被重新调用，组件会被重新渲染.<br>比如: </p>
 <p>UserList组件的users属性改变了，就得重新渲染UserList组件，<br>包括外部的<code>&lt;div&gt;</code>（容器），内部的一个<code>&lt;h3&gt;</code>和若干个<code>&lt;div&gt;</code>（每一个描述一个用户）。</p>
 <p>对后一种 <code>&lt;div&gt;</code>（表示用户的），由于其处在一个长度不确定的数组中，<br>React 需要判断，对数组中的每一项，到底是新建一个元素加入到页面中，还是更新原来的元素。</p>
-<p>#####比如以下几种情况：</p>
+<p>比如以下几种情况：</p>
 <pre><code>[{name: &apos;张三&apos;, age: 20}] =&gt; [{name: &apos;张三&apos;, age: 21}]
 </code></pre><blockquote>
 <p>这种情况明显只需要更新元素，没有必要重新创建元素。</p>
@@ -60,16 +59,16 @@
 </blockquote>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span>;</div><div class="line"><span class="keyword">var</span> element = React.createElement(</div><div class="line">  <span class="string">"div"</span>,</div><div class="line">  <span class="literal">null</span>,</div><div class="line">  React.createElement(<span class="string">"h3"</span>,<span class="literal">null</span>,<span class="string">"example"</span>),</div><div class="line">  [</div><div class="line">    React.createElement(<span class="string">"p"</span>,&#123; <span class="attr">key</span>: <span class="number">1</span> &#125;,<span class="string">"hello"</span>), </div><div class="line">    React.createElement(<span class="string">"p"</span>,&#123; <span class="attr">key</span>: <span class="number">2</span> &#125;,<span class="string">"world"</span>)</div><div class="line">  ]</div><div class="line">)</div></pre></td></tr></table></figure>
 <p>不管 props 如何变化，数组外的每个元素始终出现在 React.createElement() 参数列表中的固定位置，这个位置就是天然的 key。</p>
-<p>#####题外话:</p>
+<p>题外话:</p>
 <p>初学 React 时还容易产生另一个困惑;</p>
 <p><span style="color:red">那就是为什么 JSX 不支持 if 表达式来有选择地输出</span><br>例如：</p>
 <pre><code>{if(yes){ &lt;div {...props}/&gt;}})
 </code></pre><p>而必须采用三元运算符来完成这项工作<br>必须这样：</p>
 <pre><code>{yes ? &lt;div {...props}/&gt;} : null)
 </code></pre><p>那是因为，React 需要一个 null 去占住那个元素本来的位置。</p>
-<p>#####吐个槽：</p>
+<p>吐个槽：</p>
 <p>曾经，我天真的以为 key 这个元素只应在数组中使用,直到我在一个复杂的项目中写出了及其恶心的 <strong>componentWillReceiveProps</strong>方法。我尝试寻找销毁和重建组件，触发<em>componentDidMount*</em> 方法,重置 state，然后才突然发现 key 这个属性已经在那里了。</p>
-<p>#####举个例子:</p>
+<p>举个例子:</p>
 <p>我们有一个展示用户信息的<strong>UserDashboard</strong>组件。<br>传给组件的<strong>props</strong>只有用户的 基本信息（ID，姓名等）,而有关用户的详细信息（比如当前是否在线等）是需要请求过来的。<br>组件内的一些操作（比如尝试与该用户聊天）也会使用请求,组件本身也有各种状态（比如是否显示聊天框）。</p>
 <p>整个界面上最多只有一个<strong>UserDashboard</strong>,但某些操作（比如点击旁边的 UserList）可能会切换 UserDashboard 的目标用户。</p>
 <p><span style="color:red">那么问题就来了：</span></p>
@@ -90,11 +89,11 @@
 <p>当然，你可以质疑这样做是否会影响性能。<br>我认为，只要目标用户的切换不够频繁，对性能的影响是很小的。<br>如果不使用 key 触发组件的销毁和重建，任由组件自行[更新],每次切换时更新的内容也是很多的。</p>
 <p>这时，我们使用 key 带来的性能损耗是完全可以接受的，而带来的收益却非常大。</p>
 <p>所以，我想说的结论是：为了组件内部逻辑的清晰，你几乎应该在任何复杂的有状态组件（尤其是有具体对应对象的）上使用key属性（只要 key 属性的改变不是很频繁），这样做，才能在合适的时候触发组件的销毁与重建，组件才能有一个健康的<strong>生命周期</strong>。</p>
-<p>#####又是一个题外话</p>
+<p>又是一个题外话</p>
 <p>配合 react-router 时，通常要为 route 组件赋 key，但通常情况下我们是没法传 props 给 route 组件的。</p>
 <p>解决的方案是 createElement 方法，如下所示。</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div><div class="line">22</div><div class="line">23</div><div class="line">24</div><div class="line">25</div></pre></td><td class="code"><pre><div class="line"><span class="class"><span class="keyword">class</span> <span class="title">App</span> <span class="keyword">extends</span> <span class="title">Component</span> </span>&#123;</div><div class="line"> <span class="keyword">static</span> createElement = <span class="function">(<span class="params">Component, ownProps</span>) =&gt;</span> &#123;</div><div class="line">   <span class="keyword">const</span> &#123;userId&#125; = ownProps.params;</div><div class="line">    <span class="keyword">switch</span> (Component) &#123;</div><div class="line">     <span class="keyword">case</span> UserDashboard:</div><div class="line">      <span class="keyword">return</span> &lt;Component key=&#123;userId&#125; &#123;...ownProps&#125;/&gt;;</div><div class="line">      default:</div><div class="line">       return &lt;Component &#123;...ownProps&#125;/&gt;;</div><div class="line">    &#125;</div><div class="line">  &#125;;</div><div class="line">  render() &#123;</div><div class="line">	return (</div><div class="line">	 &lt;Provider store=&#123;store&#125;&gt;</div><div class="line">	  &lt;Router createElement=&#123;App.createElement&#125;</div><div class="line">		history=&#123;syncHistoryWithStore(hashHistory, store)&#125;&gt;</div><div class="line">		 &lt;Route path="/" component=&#123;Home&#125;&gt;</div><div class="line">		  &lt;IndexRoute component=&#123;Index&#125;/&gt;</div><div class="line">			&lt;Route path="users/:userId" </div><div class="line">				component=&#123;UserDashboard&#125;/&gt;</div><div class="line">			&lt;/Route&gt;</div><div class="line">		&lt;/Router&gt;</div><div class="line">	&lt;/Provider&gt;</div><div class="line">	)</div><div class="line">  &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure>
-<p>#####欢迎你的加入！</p>
+<p>欢迎你的加入！</p>
 <p><font style="color:green;font-weight:bold">公众号：Domeday</font><br>推送时间为：</p>
 <blockquote>
 <p>AM 7：00 ~ AM 8：30<br>PM 9：30 ~ PM 11：00</p>
@@ -117,4 +116,4 @@ var duoshuoQuery = {short_name: siteName};
     var s = document.getElementsByTagName("script")[0]; 
     s.parentNode.insertBefore(hm, s);
   })();
-})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2017/02/12/Welcome to Trust blog/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>
+})();</script></div><ul class="navication"><li class="home"><a href="/"><i class="icon icon-home"></i></a></li><li><a href="/2016/12/04/第一章 环境搭建/"><i class="icon icon-arror-right"></i></a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>
