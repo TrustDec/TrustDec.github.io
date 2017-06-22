@@ -28,7 +28,7 @@ margin-top:100px;
     float:left;
 }
 .delact-img{
-    height:500px;
+    height:450px;
     position: relative;
     box-shadow:-2px -2px 5px #188eee;
 }
@@ -38,11 +38,11 @@ margin-top:100px;
 }
 .img2{
     left:-15%;
-     top:100px;
+     top:50px;
 }
 .img3{
-     left:-25%;
-     top:200px;
+     left:-30%;
+     top:100px;
 }
 a {
     position: relative;
@@ -59,7 +59,7 @@ a {
     text-decoration: none;
     cursor: default;
     cursor: pointer;
-    margin-top: 200px
+    margin-top: 150px
 }
 a:hover{
     background: rgba(255,255,255,0.5);
