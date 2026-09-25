@@ -1,20 +1,186 @@
-<!DOCTYPE html><html lang="zh-cn"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no"><meta name="format-detection" content="telephone=no"><meta name="format-detection" content="email=no"><meta name="description"><meta name="keywords" content="Trust, TrustTheBoy, 贾国瑞, 小瑞, SmallRui"><title>Trust</title><link rel="stylesheet" href="/css/main_style.min.css"><link rel="icon" href="/favicon.ico"></head><body><div class="page-header"><div class="background"><img src="/default_images/page_background_def.jpg"><div class="author"><div class="head"><img src="/default_images/author_head.gif"></div><h3 class="name">Trust</h3><p class="signature">心空似海，意如流云，寂静的夜，才显真实.</p></div></div></div><ul class="post-list" style="max-width:900px;"><li> <p class="date">February 12, 2017</p><h4 class="title"><a href="/2017/02/12/ReactJS 实践心得 key 属性的原理和用法/">ReactJS 实践心得 key 属性的原理和用法</a></h4><div class="excerpt"><p>ReactJS &amp;&amp; ReactNative ：</p>
-<blockquote>
-<p>本章主要讲解key属性的原理和用法</p>
-</blockquote></div><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>13 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">December 4, 2016</p><h4 class="title"><a href="/2016/12/04/第一章 环境搭建/">windows搭建React Native环境</a></h4><div class="excerpt"><p>前情提要：</p>
-<blockquote>
-<p>本章图片30张，请注意你的流量<br>之前我在简书写过RN环境搭建的教程<br>简书：TrustTheBoy<br>教程地址：<a href="http://www.jianshu.com/p/8f9662dbaa99">http://www.jianshu.com/p/8f9662dbaa99</a></p>
-</blockquote></div><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>11 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">December 4, 2016</p><h4 class="title"><a href="/2016/12/04/ViewPagerAndroid/">ViewPagerAndroid</a></h4><div class="excerpt"><p>此章节的Demo大概是我最用心的一篇,以React Native内部版本：0.37源代码为准,如果你认真看完,会发现没有想象中那么复杂,反而简单的让你不知所云~</p></div><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>3 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">December 4, 2016</p><h4 class="title"><a href="/2016/12/04/LayoutAnimation/">LayoutAnimation</a></h4><div class="excerpt"><blockquote>
-<p><span class='fontSmall' style='color:green'>修改于2016年10月29日<br>RN版本:0.36</span>  </p>
-</blockquote></div><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>5 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">December 4, 2016</p><h4 class="title"><a href="/2016/12/04/DrawerLayoutAndroid/">DrawerLayoutAndroid</a></h4><div class="excerpt"><blockquote>
-<p>仅限Android平台的抽屉式组件.<br>子视图会成为主视图.<br>可在指定的窗口侧面拖拽出来.</p>
-</blockquote></div><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>9 Minutes</li><li><i class="icon icon-category"></i></li></ul></li><li> <p class="date">December 4, 2016</p><h4 class="title"><a href="/2016/12/04/100本计算机相关书籍/">这个列表包括了 100 多本经典技术书籍，涵盖：</a></h4><div class="excerpt"><blockquote>
-<p>计算机系统与网络、系统架构、算法与数据结构、<br>前端开发、后端开发、移动开发、数据库、<br>测试、项目与团队、程序员职业修炼、<br>求职面试 和 编程相关的经典书籍</p>
-</blockquote></div><ul class="meta"><li><i class="icon icon-author"></i>Trust</li><li><i class="icon icon-clock"></i>6 Minutes</li><li><i class="icon icon-category"></i></li></ul></li></ul><script><!-- trusttheboy.github.io/ Baidu tongji analytics -->
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?fe3f5969cfe3bf9255462b6403670fb4";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();</script><ul class="pagination"><li class="current"><a>1</a></li></ul><div class="page-footer"><div class="top"><ul class="social"><li><a href="https://github.com/TrustTheBoy" title="GitHub" target="_blank"><i class="icon icon-github"></i></a></li><li><a href="http://weibo.com/5972812599/profile?topnav=1&amp;wvr=6&amp;is_all=1" title="Weibo" target="_blank"><i class="icon icon-weibo"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="SegmentFault" target="_blank"><i class="icon icon-segmentfault"></i></a></li><li><a href="https://segmentfault.com/u/trusttheboy" title="Linkin" target="_blank"><i class="icon icon-linkin"></i></a></li></ul></div><div class="bottom"><p class="copyright">© 2017 Trust</p></div></div></body></html>
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light dark" />
+    <meta name="theme-color" content="#f4f4f1" />
+    <meta
+      name="description"
+      content="Trust is a full-stack product engineer and AI builder, creating thoughtful products across mobile, web, backend, and developer tools."
+    />
+    <meta name="author" content="Trust" />
+    <meta
+      name="keywords"
+      content="Trust, product engineer, full-stack engineer, AI builder, mobile, web, developer tools"
+    />
+    <link rel="canonical" href="https://trustdec.github.io/" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Trust" />
+    <meta property="og:title" content="Trust — Product Engineer & AI Builder" />
+    <meta
+      property="og:description"
+      content="Ideas into things that matter. Product engineering across mobile, web, backend, and AI."
+    />
+    <meta property="og:url" content="https://trustdec.github.io/" />
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Trust — Product Engineer & AI Builder" />
+    <meta
+      name="twitter:description"
+      content="Ideas into things that matter. Product engineering across mobile, web, backend, and AI."
+    />
+    <title>Trust — Product Engineer &amp; AI Builder</title>
+    <script>
+      (() => {
+        let saved = null;
+        try {
+          saved = localStorage.getItem("trust-theme");
+        } catch (_) {
+          // Continue with the system preference when browser storage is unavailable.
+        }
+        const systemDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
+        document.documentElement.dataset.theme = saved || (systemDark ? "dark" : "light");
+      })();
+    </script>
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Trust",
+        "url": "https://trustdec.github.io/",
+        "jobTitle": "Full-Stack Product Engineer & AI Builder",
+        "sameAs": ["https://github.com/TrustDec"]
+      }
+    </script>
+    <script src="/assets/js/site.js" defer></script>
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+
+    <header class="site-header">
+      <a class="wordmark" href="#top" aria-label="Trust home">trust<span>.</span></a>
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#about">About</a>
+        <a href="#capabilities">Capabilities</a>
+        <a href="#work">Selected work</a>
+      </nav>
+      <div class="header-actions">
+        <a class="contact-link" href="https://github.com/TrustDec" target="_blank" rel="noreferrer">
+          Get in touch <span aria-hidden="true">↗</span>
+        </a>
+        <button class="theme-toggle" type="button" aria-label="Switch to dark mode" title="Switch color theme">
+          <svg class="icon-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="3.6"/><path d="M12 2v2m0 16v2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M2 12h2m16 0h2M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42"/></svg>
+          <svg class="icon-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.1 15.2A8.6 8.6 0 0 1 8.8 3.9 8.7 8.7 0 1 0 20.1 15.2Z"/></svg>
+        </button>
+      </div>
+    </header>
+
+    <main id="main">
+      <section class="hero" id="top" aria-labelledby="hero-title">
+        <div class="hero-glow" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-one" aria-hidden="true"></div>
+        <div class="hero-orbit hero-orbit-two" aria-hidden="true"></div>
+        <div class="hero-content">
+          <p class="eyebrow hero-eyebrow"><span class="status-dot"></span> Independent by design</p>
+          <h1 id="hero-title">Ideas,<br />made <span>real.</span></h1>
+          <p class="hero-role">Full-Stack Product Engineer <span>·</span> AI Builder</p>
+          <p class="hero-intro">I turn thoughtful ideas into useful products — from the first sketch to the final detail.</p>
+          <a class="text-link hero-link" href="#work">Explore selected work <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-note" aria-hidden="true"><span>01 / 04</span><span>Designing what’s next</span></div>
+        <div class="hero-mark" aria-hidden="true"><span>t</span></div>
+      </section>
+
+      <section class="about section-shell" id="about" aria-labelledby="about-title">
+        <div class="section-label"><span>01</span><span>About</span></div>
+        <div class="about-copy reveal">
+          <h2 id="about-title">A good idea deserves<br class="desktop-break" /> a thoughtful life in the world.</h2>
+          <div class="about-detail">
+            <p>I work across product, design, and engineering to make software feel clear, capable, and considered.</p>
+            <p>Curious by nature, I move between platforms and technologies to find the right shape for the problem — then stay close through launch and beyond.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="capabilities section-shell" id="capabilities" aria-labelledby="capabilities-title">
+        <div class="section-label"><span>02</span><span>Capabilities</span></div>
+        <div class="capabilities-main reveal">
+          <div class="capabilities-heading">
+            <h2 id="capabilities-title">One perspective.<br />Many surfaces.</h2>
+            <p>End-to-end thinking, wherever the product needs to go.</p>
+          </div>
+          <div class="capability-list">
+            <div class="capability"><span class="capability-index">01</span><h3>Mobile</h3><p>Native and cross-platform experiences</p><span class="capability-symbol" aria-hidden="true">↗</span></div>
+            <div class="capability"><span class="capability-index">02</span><h3>Web</h3><p>Fast, accessible digital products</p><span class="capability-symbol" aria-hidden="true">↗</span></div>
+            <div class="capability"><span class="capability-index">03</span><h3>Backend</h3><p>Systems built to support real use</p><span class="capability-symbol" aria-hidden="true">↗</span></div>
+            <div class="capability"><span class="capability-index">04</span><h3>AI</h3><p>Useful intelligence, thoughtfully applied</p><span class="capability-symbol" aria-hidden="true">↗</span></div>
+            <div class="capability"><span class="capability-index">05</span><h3>Developer tools</h3><p>Better ways for people to build</p><span class="capability-symbol" aria-hidden="true">↗</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="focus" aria-labelledby="focus-title">
+        <div class="focus-glow" aria-hidden="true"></div>
+        <div class="focus-inner section-shell reveal">
+          <div class="section-label"><span>03</span><span>Current focus</span></div>
+          <div class="focus-copy">
+            <p class="eyebrow">Where curiosity is taking me</p>
+            <h2 id="focus-title">AI <span>×</span> Product<br />× Mobile<br class="mobile-break" /> <span>×</span> Developer tools</h2>
+            <p class="focus-detail">Building calmer, more capable tools for the people shaping what comes next.</p>
+          </div>
+          <div class="focus-foot"><span>LLMs · Agents · MCP · Automation</span><span class="focus-orbit" aria-hidden="true"><i></i><i></i><i></i></span></div>
+        </div>
+      </section>
+
+      <section class="work section-shell" id="work" aria-labelledby="work-title">
+        <div class="section-label"><span>04</span><span>Selected work</span></div>
+        <div class="work-main reveal">
+          <div class="work-heading">
+            <h2 id="work-title">A few things<br />made along the way.</h2>
+            <a class="text-link" href="https://github.com/TrustDec?tab=repositories" target="_blank" rel="noreferrer">Browse all projects <span aria-hidden="true">↗</span></a>
+          </div>
+          <div class="project-list">
+            <a class="project-row" href="https://github.com/TrustDec/react-native-round-progress" target="_blank" rel="noreferrer">
+              <span class="project-number">01</span>
+              <span class="project-copy"><span class="project-title">Round Progress</span><span class="project-description">A lightweight circular progress view for React Native.</span></span>
+              <span class="project-type">Mobile · Open source</span>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <span class="project-art progress-art" aria-hidden="true"><i></i><b>68</b></span>
+            </a>
+            <a class="project-row" href="https://github.com/TrustDec/react-native-component-redux" target="_blank" rel="noreferrer">
+              <span class="project-number">02</span>
+              <span class="project-copy"><span class="project-title">React Native, end to end</span><span class="project-description">An app exploring state, navigation, native modules, and updates.</span></span>
+              <span class="project-type">Product · Mobile</span>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <span class="project-art layers-art" aria-hidden="true"><i></i><i></i><i></i></span>
+            </a>
+            <a class="project-row" href="https://github.com/TrustDec/old-driver-collection" target="_blank" rel="noreferrer">
+              <span class="project-number">03</span>
+              <span class="project-copy"><span class="project-title">The learning library</span><span class="project-description">A growing collection of tools, ideas, and developer resources.</span></span>
+              <span class="project-type">Community · Resources</span>
+              <span class="project-arrow" aria-hidden="true">↗</span>
+              <span class="project-art library-art" aria-hidden="true"><i>R</i><i>⌘</i><i>↗</i></span>
+            </a>
+          </div>
+          <p class="work-caption">Independent work, open source, and experiments in making software feel a little more human.</p>
+        </div>
+      </section>
+
+      <section class="contact" id="contact" aria-labelledby="contact-title">
+        <div class="contact-inner section-shell reveal">
+          <p class="eyebrow">Have a good one in mind?</p>
+          <h2 id="contact-title">Let’s make<br />something <span>matter.</span></h2>
+          <a class="contact-cta" href="https://github.com/TrustDec" target="_blank" rel="noreferrer">Find me on GitHub <span aria-hidden="true">↗</span></a>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <a class="wordmark footer-wordmark" href="#top" aria-label="Back to top">trust<span>.</span></a>
+      <p>Thoughtfully made, in good company with the internet.</p>
+      <div class="footer-links"><a href="https://github.com/TrustDec" target="_blank" rel="noreferrer">GitHub ↗</a><a href="/archives/">Writing archive ↗</a><span>© <span id="year">2026</span> Trust</span></div>
+    </footer>
+  </body>
+</html>
