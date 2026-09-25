@@ -25,8 +25,11 @@
   const year = document.getElementById("year");
   if (year) year.textContent = new Date().getFullYear();
 
+  const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  if (!reducedMotion) root.classList.add("has-motion");
+
   const revealItems = document.querySelectorAll(".reveal");
-  if (!("IntersectionObserver" in window) || window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+  if (!("IntersectionObserver" in window) || reducedMotion) {
     revealItems.forEach((item) => item.classList.add("is-visible"));
     return;
   }
